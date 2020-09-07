@@ -1,0 +1,45 @@
+<div class="row">
+<div class="container col-md-6" >
+    <div *ngIf = "data != null">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">UserId</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody *ngFor = "let data of data; index as i">
+          <tr *ngIf = "i<5">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.Name}}</td>
+            <td class="editUser" (click) = editUser(data.UserId)>{{data.UserId}}</td>
+            <td>{{data.Email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+    
+    <nav aria-label="Page navigation example">
+      <ul class="pagination col-md-6">
+        <div *ngFor = "let val of value; index as j">
+        <li class="page-item"><a class="page-link" (click)="pagi(j)" name="name">{{j+1}}</a></li>
+        </div>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- </div> -->
+
+<!-- <table>
+  <tr ng-repeat="x in data">
+    <td>{{x.data}}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table> -->
+    
+    
+
+
